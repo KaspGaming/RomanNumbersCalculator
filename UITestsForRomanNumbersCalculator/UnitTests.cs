@@ -28,7 +28,7 @@ namespace UITestsForRomanNumbersCalculator
             await Task.Delay(50);
             string text = result.Text;
             buttonCE.Command.Execute(buttonCE.CommandParameter);
-            Assert.True(text == "VI", "result != VI"); 
+            Assert.True(text == "VI", "result != VI");
         }
 
         [Fact]
@@ -362,6 +362,34 @@ namespace UITestsForRomanNumbersCalculator
             await Task.Delay(50);
             string text = result.Text;
             Assert.True(text == "", "result != '");
+        }
+
+        [Fact]
+        public async void Test14()
+        {
+            var app = AvaloniaApp.GetApp();
+            var mainWindow = AvaloniaApp.GetMainWindow();
+
+            await Task.Delay(100);
+
+            var result = mainWindow.GetVisualDescendants().OfType<TextBlock>().First(t => t.Name == "textResult");
+            var buttonI = mainWindow.GetVisualDescendants().OfType<Button>().First(b => b.Name == "buttonI");
+            var buttonPlus = mainWindow.GetVisualDescendants().OfType<Button>().First(b => b.Name == "buttonPlus");
+            var buttonSub = mainWindow.GetVisualDescendants().OfType<Button>().First(b => b.Name == "buttonSub");
+            var buttonV = mainWindow.GetVisualDescendants().OfType<Button>().First(b => b.Name == "buttonV");
+            var buttonResult = mainWindow.GetVisualDescendants().OfType<Button>().First(b => b.Name == "buttonResult");
+            var buttonCE = mainWindow.GetVisualDescendants().OfType<Button>().First(b => b.Name == "buttonCE");
+
+            buttonI.Command.Execute(buttonI.CommandParameter);
+            buttonSub.Command.Execute(buttonSub.CommandParameter);
+            buttonPlus.Command.Execute(buttonPlus.CommandParameter);
+            buttonV.Command.Execute(buttonV.CommandParameter);
+            buttonResult.Command.Execute(buttonResult.CommandParameter);
+
+            await Task.Delay(50);
+            string text = result.Text;
+            buttonCE.Command.Execute(buttonCE.CommandParameter);
+            Assert.True(text == "VI", "result != VI");
         }
     }
 }

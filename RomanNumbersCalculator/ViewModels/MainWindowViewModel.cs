@@ -46,8 +46,14 @@ namespace RomanNumbersCalculator.ViewModels
                 }
             });
             PlusCommand = ReactiveCommand.Create(() => {
-            if (currentNumberStringRepresentation != "" && currentNumberStringRepresentation != "#ERROR")
+            if (currentNumberStringRepresentation != "#ERROR")
                 {
+                    if (currentNumberStringRepresentation == "" && currentOperationStringRepresentation!="")
+                    {
+                        currentOperationStringRepresentation = "+";
+                        return;
+                    }
+                    if (currentNumberStringRepresentation == "") return;
                     try
                     {
                         if (currentOperationStringRepresentation == "=")
@@ -95,8 +101,14 @@ namespace RomanNumbersCalculator.ViewModels
                 }
             });
             SubCommand = ReactiveCommand.Create(() => {
-                if (currentNumberStringRepresentation != "" && currentNumberStringRepresentation != "#ERROR")
+                if (currentNumberStringRepresentation != "#ERROR")
                 {
+                    if (currentNumberStringRepresentation == "" && currentOperationStringRepresentation != "")
+                    {
+                        currentOperationStringRepresentation = "-";
+                        return;
+                    }
+                    if (currentNumberStringRepresentation == "") return;
                     try
                     {
                         if (currentOperationStringRepresentation == "=")
@@ -144,8 +156,14 @@ namespace RomanNumbersCalculator.ViewModels
                 }
             });
             MulCommand = ReactiveCommand.Create(() => {
-                if (currentNumberStringRepresentation != "" && currentNumberStringRepresentation != "#ERROR")
+                if (currentNumberStringRepresentation != "#ERROR")
                 {
+                    if (currentNumberStringRepresentation == "" && currentOperationStringRepresentation != "")
+                    {
+                        currentOperationStringRepresentation = "*";
+                        return;
+                    }
+                    if (currentNumberStringRepresentation == "") return;
                     try
                     {
                         if (currentOperationStringRepresentation == "=")
@@ -193,8 +211,14 @@ namespace RomanNumbersCalculator.ViewModels
                 }
             });
             DivCommand = ReactiveCommand.Create(() => {
-                if (currentNumberStringRepresentation != "" && currentNumberStringRepresentation != "#ERROR")
+                if (currentNumberStringRepresentation != "#ERROR")
                 {
+                    if (currentNumberStringRepresentation == "" && currentOperationStringRepresentation != "")
+                    {
+                        currentOperationStringRepresentation = "/";
+                        return;
+                    }
+                    if (currentNumberStringRepresentation == "") return;
                     try
                     {
                         if (currentOperationStringRepresentation == "=")
