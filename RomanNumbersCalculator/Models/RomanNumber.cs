@@ -14,7 +14,7 @@ namespace RomanNumbersCalculator.Models
         private string romanNumber = "";
         public RomanNumber(ushort number)
         {
-            if (number < 1 || number > 3999) throw new RomanNumberExpection("#ERROR");
+            if (number < 1 || number > 3999) throw new RomanNumberException("#ERROR");
 
             this.number = number;
 
@@ -68,8 +68,8 @@ namespace RomanNumbersCalculator.Models
                 }
                 this.number = result;
             }
-            if (number != new RomanNumber(this.number).ToString()) throw new RomanNumberExpection("#ERROR");
-            if (this.number < 1 || this.number > 3999) throw new RomanNumberExpection("#ERROR");
+            if (number != new RomanNumber(this.number).ToString()) throw new RomanNumberException("#ERROR");
+            if (this.number < 1 || this.number > 3999) throw new RomanNumberException("#ERROR");
         }
 
         public static RomanNumber Add(RomanNumber RomanNumber1, RomanNumber RomanNumber2)

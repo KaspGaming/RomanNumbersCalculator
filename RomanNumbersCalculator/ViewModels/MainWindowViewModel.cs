@@ -94,7 +94,7 @@ namespace RomanNumbersCalculator.ViewModels
                             }
                         }
                     }
-                    catch (RomanNumberExpection ex)
+                    catch (RomanNumberException ex)
                     {
                         CurrentNumberStringRepresentation = ex.Message;
                     }
@@ -149,7 +149,7 @@ namespace RomanNumbersCalculator.ViewModels
                             }
                         }
                     }
-                    catch (RomanNumberExpection ex)
+                    catch (RomanNumberException ex)
                     {
                         CurrentNumberStringRepresentation = ex.Message;
                     }
@@ -204,7 +204,7 @@ namespace RomanNumbersCalculator.ViewModels
                             }
                         }
                     }
-                    catch (RomanNumberExpection ex)
+                    catch (RomanNumberException ex)
                     {
                         CurrentNumberStringRepresentation = ex.Message;
                     }
@@ -259,7 +259,7 @@ namespace RomanNumbersCalculator.ViewModels
                             }
                         }
                     }
-                    catch (RomanNumberExpection ex)
+                    catch (RomanNumberException ex)
                     {
                         CurrentNumberStringRepresentation = ex.Message;
                     }
@@ -290,7 +290,7 @@ namespace RomanNumbersCalculator.ViewModels
                         currentOperationStringRepresentation = "=";
                         CurrentNumberStringRepresentation = StackRomanNumbers.Peek().ToString();
                     }
-                    catch(RomanNumberExpection ex)
+                    catch(RomanNumberException ex)
                     {
                         CurrentNumberStringRepresentation = ex.Message;
                     }

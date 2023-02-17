@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace RomanNumbersCalculator.Models
 {
-    internal class RomanNumberExpection : Exception
+    internal class RomanNumberException : Exception
     {
-        public RomanNumberExpection(string message) : base(message) { }
+        public RomanNumberException(string message) : base(message) { }
     }
 }
